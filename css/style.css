@@ -1,0 +1,223 @@
+body {
+  font-family: 'Vazirmatn', 'Inter', sans-serif;
+  background: #181818;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Vazirmatn', sans-serif;
+  color: #FFD700;
+  margin: 0 0 1rem 0;
+}
+
+.bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem 1rem;
+  font-size: 1.1rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid #222;
+}
+
+.gallery-section, .videos-section, .contact-section {
+  padding: 2rem 1rem 1rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.gallery-item {
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
+  background: #181818;
+  transition: filter 0.3s;
+}
+.gallery-item .caption {
+  padding: 0.7rem 1rem 0.5rem 1rem;
+  color: #FFD700;
+  font-size: 1rem;
+  font-family: 'Vazirmatn', sans-serif;
+}
+.gallery-item .downloads {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+.gallery-item .downloads a {
+  background: #FFD700;
+  color: #181818;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+.gallery-item .downloads a:hover {
+  background: #fff;
+  color: #181818;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.video-item {
+  background: #222;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 1rem;
+  overflow: hidden;
+}
+.video-title {
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+.video-embed {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.contact-icons a {
+  display: inline-block;
+  background: #222;
+  border-radius: 50%;
+  padding: 0.7rem;
+  transition: background 0.2s;
+}
+.contact-icons a:hover {
+  background: #FFD700;
+}
+.contact-icons img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* Lightbox styles */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(24,24,24,0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+#lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+#lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  background: #181818;
+}
+#lightbox .close-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: #FFD700;
+  color: #181818;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+#lightbox .close-btn:hover {
+  background: #fff;
+}
+
+/* Parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  .video-list {
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+  .bio {
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  .gallery-section, .videos-section, .contact-section {
+    padding: 1.2rem 0.5rem 0.5rem 0.5rem;
+  }
+}
+
+/* Animations */
+.gallery-item, .video-item {
+  animation: fadeInUp 0.7s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+} 
