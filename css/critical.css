@@ -1,0 +1,156 @@
+body {
+  background: #181A2A;
+  color: #E6EAF3;
+  font-family: 'Vazirmatn', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #181A2A 80%, #23263A 100%);
+  padding: 0.7rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(24,26,42,0.10);
+  border-bottom: 1.5px solid #23263A;
+}
+.logo {
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  border: 3px solid #2ED8A7;
+  box-shadow: 0 2px 12px rgba(46,216,167,0.12), 0 1px 0 #23263A;
+  background: #fff;
+  object-fit: cover;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.logo:hover {
+  box-shadow: 0 4px 24px rgba(46,216,167,0.22), 0 2px 0 #23263A;
+  border-color: #fff;
+}
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  display: block;
+  background: #2ED8A7;
+  height: 3px;
+  width: 24px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+.hamburger span::before,
+.hamburger span::after {
+  content: '';
+  position: absolute;
+}
+.hamburger span::before { top: -8px; }
+.hamburger span::after { top: 8px; }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: #2ED8A7;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.nav-links li a:hover {
+  color: #E6EAF3;
+}
+.nav-links li a.active {
+  background: #2ED8A7;
+  color: #181A2A !important;
+  border-radius: 18px;
+  padding: 0.3rem 1.2rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(46,216,167,0.10);
+}
+.navbar.sticky {
+  box-shadow: 0 4px 24px rgba(24,26,42,0.18);
+  backdrop-filter: blur(6px);
+}
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: #181818;
+    flex-direction: column;
+    width: 100vw;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+}
+.hero {
+  text-align: center;
+  padding: 4.5rem 1rem 3rem 1rem;
+  background: linear-gradient(180deg, #181A2A 60%, #23263A 100%);
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  box-shadow: 0 8px 32px rgba(24,26,42,0.10);
+  border-bottom: 1.5px solid #23263A;
+}
+.slogan {
+  color: #2ED8A7;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-shadow: 0 2px 8px rgba(46,216,167,0.10);
+}
+section {
+  border-bottom: 1.5px solid #23263A;
+  background: linear-gradient(180deg, #181A2A 90%, #23263A 100%);
+}
+footer {
+  text-align: center;
+  color: #E6EAF3;
+  background: #181A2A;
+  padding: 1.2rem 0 2.2rem 0;
+  font-size: 1.05rem;
+  border-top: 2px solid #23263A;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.contact-icons a {
+  display: inline-block;
+  background: #23263A;
+  border-radius: 50%;
+  padding: 0.7rem;
+  transition: background 0.2s;
+}
+.contact-icons a:hover {
+  background: #2ED8A7;
+}
+.contact-icons img {
+  width: 32px;
+  height: 32px;
+  display: block;
+} 
